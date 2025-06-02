@@ -1,40 +1,33 @@
-# Diretórios e arquivos do Maven
-/target/
-!.mvn/wrapper/maven-wrapper.jar
-.mvn/
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-# Arquivos de configuração do Maven
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-# Arquivos de log
-*.log
-
-# IDEs (ex: IntelliJ, Eclipse, VSCode)
-.idea/
-*.iml
+### IntelliJ IDEA ###
+.idea
 *.iws
+*.iml
 *.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
 .vscode/
-*.class
-
-# Arquivos de sistema
-.DS_Store
-Thumbs.db
-
-# Arquivos do sistema operacional
-*.swp
-*~
-
-# Banco de dados H2 local (opcional, se quiser evitar logs ou dados locais)
-*.mv.db
-*.h2.db
-
-# Arquivos de ambiente (caso use Spring profiles)
-/.env
-*.env
-application-*.yml
-application-*.properties
