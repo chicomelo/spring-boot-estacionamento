@@ -83,6 +83,7 @@ public class EstacionamentoService {
     public List<Estadia> listarEstadiasAtivas() {
         return estadiaRepository.findBySaidaIsNull();
     }
+
     // ===== CONTROLE ESTACIONAMENTO =====
     @Transactional
     public Estadia registrarEntrada(Long carroId, Long vagaId) {
