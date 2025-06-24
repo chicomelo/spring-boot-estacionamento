@@ -1,6 +1,6 @@
 package br.com.estacionamento.Estacionamento.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,19 +11,16 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Vaga {
+public class Marca {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
-    private Integer numero;
+    private String nome;
 
-    @Column(nullable = false)
-    private boolean ocupada = false;
-
-    @OneToMany(mappedBy = "vaga")
-    @JsonIgnore
-    private List<Estadia> estadias;
+    @OneToMany(mappedBy = "marca", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Modelo> modelos;
 }

@@ -1,7 +1,10 @@
 package br.com.estacionamento.Estacionamento.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Data
@@ -17,6 +20,14 @@ public class Carro {
     @Column(nullable = false, unique = true)
     private String placa;
 
-    private String modelo;
+    @Column(nullable = false)
     private String cor;
+
+    @ManyToOne
+    @JoinColumn(name = "modelo_id", nullable = false)
+    private Modelo modelo;
+
+    @OneToMany(mappedBy = "carro")
+    @JsonIgnore
+    private List<Estadia> estadias;
 }
